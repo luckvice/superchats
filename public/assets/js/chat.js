@@ -8,6 +8,7 @@ jQuery(function($){
 
     var websocket_server = new WebSocket("ws://192.168.4.88:8001/");
     websocket_server.onopen = function(e) {
+        console.log('Sessao iniciada com o servidor');
         websocket_server.send(
             JSON.stringify({
                 'type':'socket',
@@ -17,6 +18,7 @@ jQuery(function($){
         
 
             websocket_server.send(
+     
                 JSON.stringify({
                     'type':'chat',
                     'user_id':$('#nickname').val(),
@@ -30,12 +32,22 @@ jQuery(function($){
         window.alert("///**Erro de websocket**///");
     }
 
+    websocket_server.onclose = function(event) {
+        if (event.wasClean) {
+          alert('Sessao encerrada');
+        } else {
+
+          alert('Encerrou');
+        }
+      };
+
     websocket_server.onmessage = function(e)
     {
         var json = JSON.parse(e.data);
         switch(json.type) {
             case 'chat':
                 $('#saida_chat').append(json.msg);
+                console.log('DEBUG ['+json.msg+"]");
                 break;
         }
     }
@@ -70,6 +82,6 @@ jQuery(function($){
 
             })
         );
-        $('#entrada_chat').val('');
+        $('.emojionearea-editor').val('');
     }
 });

@@ -10,9 +10,7 @@
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-              
-                 
+                    <div class="divider-custom-line"></div> 
                 </div>
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
@@ -79,7 +77,7 @@
                                     <p class="mb-5">Lazer CHAT.</p>
                                     <div class="container-flude">
                                         <!-- Aqui carrega as informações do CHAT via JSON APPEND-->
-                                        <div class="msg-group center" id="saida_chat">
+                                        <div class="msg-group center text-left" id="saida_chat">
                                             
                     
                                            
