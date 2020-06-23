@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost/superchats/public';
+	public $baseURL = 'http://192.168.4.88/superchats/public';
 
 	/*
 	|--------------------------------------------------------------------------

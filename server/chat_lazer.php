@@ -50,7 +50,7 @@ class Chat implements MessageComponentInterface {
 				if($user_id=='')
 				{
 					$response_from="<b>Vocẽ entrou no SuperChats - Categoria Lazer </b><br><br>";
-										
+										printf('Debug');
 				}	
 				
 				//Enviando mensagem para você
@@ -62,6 +62,7 @@ class Chat implements MessageComponentInterface {
 					if($from!=$client)
 					{
 						$client->send(json_encode(array("type"=>$type,"msg"=>$response_to)));
+						
 					}
 				}
 				break;

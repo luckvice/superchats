@@ -46,18 +46,22 @@ jQuery(function($){
     enviaChat($('#entrada_chat').val());
     });
 
+    $("#entrada_chat").emojioneArea();
+
     $('#entrada_chat').on('keyup',function(e){
         if(e.keyCode==13 )
         {
-    enviaChat($(this).val());
+             enviaChat($(this).val());
         }
     });
 
     function enviaChat(chat_msg){
-        console.log('keypress');
+        console.log('preciosou tecla');
+        
         var chat_msg = chat_msg;
         var nickname = $('#nickname').val();
-        console.log(nickname);
+
+        console.log('Debug: MENSAGEM['+chat_msg+"] De usuario: ["+nickname+"]");
         websocket_server.send(
             JSON.stringify({
             'type':'chat',

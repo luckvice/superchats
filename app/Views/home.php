@@ -13,6 +13,7 @@
         <!-- Fonts CSS-->
         <link rel="stylesheet" href="assets/css/heading.css">
         <link rel="stylesheet" href="assets/css/body.css">
+        <link rel="stylesheet" href="assets/css/emojionearea.min.css">
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
@@ -295,9 +296,12 @@ Guilherme</p>
         <!-- Contact form JS-->
         <script src="assets/mail/jqBootstrapValidation.js"></script>
         <script src="assets/mail/contact_me.js"></script>
+        <!-- Emojis Chat -->
+        <script type="text/javascript" src="assets/js/emojionearea.min.js"></script>
         <!-- Core theme JS-->
         <script src="assets/js/scripts.js"></script>
         <!-- Implementação do chat JS-->
         <script src="assets/js/chat.js"></script>
+
     </body>
 </html>
