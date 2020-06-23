@@ -15,21 +15,28 @@ class Home extends BaseController
 		if($sessao->get('logou') == null){
 			$data['sessaoChat'] = view('modal/login_view');//Se nao tiver logado Não carrega as sessoes do chat
 		}else{
-			$data['sessaoChat'] = view('modal/modal_view');
+			$data['nickname'] 	= $sessao->get('nickname');
+			$data['img']		= $sessao->get('img');
+			$data['sessaoChat'] = view('modal/modal_view',$data);
 		}
 	
 		return view('home', $data);
 	}
 
 	public function logar_usuario(){
-		$sessao = \Config\Services::session();
+		$request 	= \Config\Services::request();
+		$sessao 	= \Config\Services::session();
+		
+	
+
+		$sessao->set('nickname',$request->getPost('nickname'));
+		$sessao->set('img',$request->getPost('img'));
 		$sessao->set('logou',true);
 		return redirect()->to('/superchats/public');
 	}
 
 	public function deslogar(){
 		$sessao = \Config\Services::session();
-
 		$sessao->destroy();
 		return redirect()->to('/superchats/public');
 	}
