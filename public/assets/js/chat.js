@@ -19,8 +19,8 @@ jQuery(function($){
             websocket_server.send(
                 JSON.stringify({
                     'type':'chat',
-                    'user_id':'',
-                    'chat_msg':'<b><a href="#"> Aqui vai ser input hidden da sessao </a>'.concat(' Entrou no Chat</b>')
+                    'user_id':$('#nickname').val(),
+                    'chat_msg':'Entrou no chat'
                 })
             );
 
