@@ -1,6 +1,6 @@
 <section class="page-section portfolio" id="portfolio">
-    <span id='nickname' style="hide"><?= $nickname ?></span> <!-- Recebe a variavel do controller home -->
-    <span id='img' style="hide"><?= $img ?></span>
+    <input type="hidden" id='nickname' value='<?= $nickname ?>'> <!-- Recebe a variavel do controller home -->
+    <input type="hidden" id='img' value='<?= $img?>'>
             <div class="container">
                 <!-- Portfolio Section Heading-->
                 <div class="text-center">

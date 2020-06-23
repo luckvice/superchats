@@ -56,11 +56,12 @@ jQuery(function($){
     function enviaChat(chat_msg){
         console.log('keypress');
         var chat_msg = chat_msg;
-
+        var nickname = $('#nickname').val();
+        console.log(nickname);
         websocket_server.send(
             JSON.stringify({
             'type':'chat',
-            'user_id':'TESTE',//input hidden
+            'user_id': nickname,//input hidden
             'chat_msg':chat_msg
 
             })
