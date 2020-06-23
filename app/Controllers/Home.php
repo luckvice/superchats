@@ -21,19 +21,16 @@ class Home extends BaseController
 		return view('home', $data);
 	}
 
-	public function logar(){
+	public function logar_usuario(){
 		$sessao = \Config\Services::session();
-
 		$sessao->set('logou',true);
-
-		return redirect()->to('/');
-		
+		return redirect()->to('/superchats/public');
 	}
 
 	public function deslogar(){
 		$sessao = \Config\Services::session();
 
 		$sessao->destroy();
-		return redirect()->to('/');
+		return redirect()->to('/superchats/public');
 	}
 }
