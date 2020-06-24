@@ -20,6 +20,7 @@ class Chat implements MessageComponentInterface {
 	}
 
 	public function onOpen(ConnectionInterface $conn) {
+		echo nl2br('[DEBUG]: Cliente conectou no WebSocket').PHP_EOL;
 		//adding each websocket connection to $client
 		$this->clients->attach($conn);
 		// $this->users[$conn->resourceId] = $conn;
@@ -28,6 +29,7 @@ class Chat implements MessageComponentInterface {
 
 	public function onClose(ConnectionInterface $conn) {
 		$this->clients->detach($conn);
+		echo nl2br('[DEBUG]: Servidor fechou.').PHP_EOL;
 		// unset($this->users[$conn->resourceId]);
 	}
 
@@ -68,14 +70,13 @@ class Chat implements MessageComponentInterface {
 					}
 				}
 				break;
-				
-				
 		}
 	}
 
 	public function onError(ConnectionInterface $conn, \Exception $e) {
 		$conn->close();
 	}
+
 	
 }
 $server = IoServer::factory(
