@@ -37,7 +37,7 @@ jQuery(function($){
           alert('Sessao encerrada');
         } else {
 
-          alert('Encerrou');
+          alert('Servidor de chats desconectado...');
         }
       };
 
