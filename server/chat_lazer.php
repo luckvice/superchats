@@ -7,6 +7,7 @@ use Ratchet\ConnectionInterface;
 use Ratchet\Server\IoServer;
 use Ratchet\Http\HttpServer;
 use Ratchet\WebSocket\WsServer;
+error_reporting(E_ALL ^ E_NOTICE);  
 //require_once '/var/www/html/superchats/vendor/autoload.php';
 require_once '../vendor/autoload.php';
 class Chat implements MessageComponentInterface {
@@ -42,7 +43,8 @@ class Chat implements MessageComponentInterface {
 						
 				//Mensagem de entrada
 				$response_from = "<strong >Você:</strong>" . $chat_msg. "<br><br>";
-
+	
+				echo nl2br('[DEBUG SEND]: '.$user_id.' Mensagem ['.$chat_msg.'] | '.date("h:i:sa").' ').PHP_EOL;
 				//mensagem para todos do site
 				$response_to = "<a href='profile.php?name=". $user_id. "' target='_blank'> <img width='50px' height='50px' src='".$img_perfil."'> </a>: ".$user_id.":".$chat_msg."<br><br>"; 
 				
@@ -50,7 +52,7 @@ class Chat implements MessageComponentInterface {
 				if($user_id=='')
 				{
 					$response_from="<b>Vocẽ entrou no SuperChats - Categoria Lazer </b><br><br>";
-										printf('Debug');
+					
 				}	
 				
 				//Enviando mensagem para você
@@ -62,7 +64,7 @@ class Chat implements MessageComponentInterface {
 					if($from!=$client)
 					{
 						$client->send(json_encode(array("type"=>$type,"msg"=>$response_to)));
-						
+						echo nl2br('[DEBUG ALL]: '.$response_to).PHP_EOL;
 					}
 				}
 				break;

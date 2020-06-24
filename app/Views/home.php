@@ -299,9 +299,9 @@ Guilherme</p>
         <!-- Emojis Chat -->
         <script type="text/javascript" src="assets/js/emojionearea.min.js"></script>
         <!-- Core theme JS-->
+       
         <script src="assets/js/scripts.js"></script>
-        <!-- Implementação do chat JS-->
-        <script src="assets/js/chat.js"></script>
+        <?= $carregaChat?>
 
     </body>
 </html>

@@ -14,10 +14,12 @@ class Home extends BaseController
 
 		if($sessao->get('logou') == null){
 			$data['sessaoChat'] = view('modal/login_view');//Se nao tiver logado Não carrega as sessoes do chat
+			$data['carregaChat'] = '';
 		}else{
 			$data['nickname'] 	= $sessao->get('nickname');
 			$data['img']		= $sessao->get('img');
 			$data['sessaoChat'] = view('modal/modal_view',$data);
+			$data['carregaChat'] = '<script src="assets/js/chat.js"></script>';
 		}
 	
 		return view('home', $data);

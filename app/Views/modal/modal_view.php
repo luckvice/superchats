@@ -1,3 +1,4 @@
+
 <section class="page-section portfolio" id="portfolio">
     <input type="hidden" id='nickname' value='<?= $nickname ?>'> <!-- Recebe a variavel do controller home -->
     <input type="hidden" id='img' value='<?= $img?>'>
@@ -207,3 +208,5 @@
                 </div>
             </div>
         </div>
+                <!-- Implementação do chat JS-->
+     
