@@ -82,6 +82,6 @@ jQuery(function($){
 
             })
         );
-        $('.emojionearea-editor').val('');
+        $('.emojionearea').val('');
     }
 });
