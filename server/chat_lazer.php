@@ -29,7 +29,7 @@ class Chat implements MessageComponentInterface {
 
 	public function onClose(ConnectionInterface $conn) {
 		$this->clients->detach($conn);
-		echo nl2br('[DEBUG]: Servidor fechou.').PHP_EOL;
+		echo nl2br('[DEBUG]: Cliente saiu do servidor.').PHP_EOL;
 		// unset($this->users[$conn->resourceId]);
 	}
 

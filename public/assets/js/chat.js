@@ -53,9 +53,11 @@ jQuery(function($){
     }
 
 
-
+    $('#deslogar').click(function() {
+        websocket_server.close();
+    });
     $('#btn-enviar').click(function() {
-    enviaChat($('#entrada_chat').val());
+        enviaChat($('#entrada_chat').val());
     });
 
     $("#entrada_chat").emojioneArea();
@@ -74,6 +76,7 @@ jQuery(function($){
         var nickname = $('#nickname').val();
 
         console.log('Debug: MENSAGEM['+chat_msg+"] De usuario: ["+nickname+"]");
+
         websocket_server.send(
             JSON.stringify({
             'type':'chat',
