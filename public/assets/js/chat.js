@@ -6,7 +6,7 @@
 
 jQuery(function($){
 
-    var websocket_server = new WebSocket("ws://192.168.4.88:8001/");
+    var websocket_server = new WebSocket("ws://localhost:8001/");
     websocket_server.onopen = function(e) {
         console.log('Sessao iniciada com o servidor');
         websocket_server.send(
