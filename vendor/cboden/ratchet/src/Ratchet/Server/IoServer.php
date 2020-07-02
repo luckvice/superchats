@@ -68,7 +68,7 @@ class IoServer {
         $loop   = LoopFactory::create();
         $socket = new Reactor($loop);
         $socket->listen($port, $address);
-
+        echo 'Servidor Iniciado: '.$address.' Porta: '.$port;
         return new static($component, $socket, $loop);
     }
 
@@ -95,7 +95,7 @@ class IoServer {
 
         $conn->decor->resourceId    = (int)$conn->stream;
         $conn->decor->remoteAddress = $conn->getRemoteAddress();
-
+        echo 'Cliente conectou  IP: '.$conn->getRemoteAddress();
         $this->app->onOpen($conn->decor);
 
         $conn->on('data', $this->handlers[0]);
@@ -111,6 +111,7 @@ class IoServer {
     public function handleData($data, $conn) {
         try {
             $this->app->onMessage($conn->decor, $data);
+            echo nl2br('DEBUG : ').$data;
         } catch (\Exception $e) {
             $this->handleError($e, $conn);
         }

@@ -27,6 +27,7 @@ class HttpRequestParser implements MessageInterface {
      */
     public function onMessage(ConnectionInterface $context, $data) {
         if (!isset($context->httpBuffer)) {
+    
             $context->httpBuffer = '';
         }
 
